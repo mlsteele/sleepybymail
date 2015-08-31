@@ -2,15 +2,15 @@
 # 6 hours away from my server.
 
 # Every morning at 4 AM.
-0 4 * * * python sendmorning.py
+0 4 * * * cd ~/sleepybymail/ && ~/.pyenv/versions/2.7.6/bin/python.27 sendmorning.py 2>&1 | logger -t sleepybymail
 
 # Every day at 5am, 7am, 8am, 9am, 10am, 11am
-0 5 * * * python sendcheckup.py
-0 7 * * * python sendcheckup.py
-0 8 * * * python sendcheckup.py
-0 9 * * * python sendcheckup.py
-0 10 * * * python sendcheckup.py
-0 11 * * * python sendcheckup.py
+0 5 * * * cd ~/sleepybymail/ && ~/.pyenv/versions/2.7.6/bin/python.27 sendcheckup.py 2>&1 | logger -t sleepybymail
+0 7 * * * cd ~/sleepybymail/ && ~/.pyenv/versions/2.7.6/bin/python.27 sendcheckup.py 2>&1 | logger -t sleepybymail
+0 8 * * * cd ~/sleepybymail/ && ~/.pyenv/versions/2.7.6/bin/python.27 sendcheckup.py 2>&1 | logger -t sleepybymail
+0 9 * * * cd ~/sleepybymail/ && ~/.pyenv/versions/2.7.6/bin/python.27 sendcheckup.py 2>&1 | logger -t sleepybymail
+0 10 * * * cd ~/sleepybymail/ && ~/.pyenv/versions/2.7.6/bin/python.27 sendcheckup.py 2>&1 | logger -t sleepybymail
+0 11 * * * cd ~/sleepybymail/ && ~/.pyenv/versions/2.7.6/bin/python.27 sendcheckup.py 2>&1 | logger -t sleepybymail
 
 # * * * * * *
 # | | | | | | 
