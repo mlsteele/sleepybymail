@@ -6,7 +6,8 @@ This thing emails me every day asking how many hours of sleep I got and then a f
 
 ## Dependencies
 
-Gotta have Mongo, pymongo, and flask.
+Gotta have Mongo, pymongo, sendgrid, and flask.
+(And a SendGrid account.)
 
 ## Usage
 
