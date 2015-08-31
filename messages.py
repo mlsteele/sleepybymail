@@ -19,7 +19,7 @@ def make_link(data):
             querystring)
 
 def morning_message_body():
-    """Get the body text of the morning message"""
+    """Get the body text of the morning message."""
     message_uuid = uuid.uuid4()
     lines = []
     lines.append("Hello,")
@@ -30,6 +30,7 @@ def morning_message_body():
         lines.append("")
         link_uuid = uuid.uuid4()
         link_href = make_link({
+            "type": "automail",
             "message_uuid": message_uuid,
             "link_uuid": link_uuid,
             "time_requested": datetime.datetime.now(),
@@ -40,6 +41,32 @@ def morning_message_body():
             link_href,
             n))
     return "\n".join(lines)
+
+
+def checkup_message_body():
+    """Get the body text of the checkup message."""
+    message_uuid = uuid.uuid4()
+    lines = []
+    lines.append("Hey there,")
+    lines.append("")
+    lines.append("Rate your awakeness on a scale from 1 to 5 please.")
+    lines.append("")
+    for n in xrange(1, 6):
+        lines.append("  ")
+        link_uuid = uuid.uuid4()
+        link_href = make_link({
+            "type": "automail",
+            "message_uuid": message_uuid,
+            "link_uuid": link_uuid,
+            "time_requested": datetime.datetime.now(),
+            "field": "awakeness",
+            "value": n,
+            })
+        lines.append("<a href=\"{}\">{}</a>".format(
+            link_href,
+            n))
+    return "\n".join(lines)
+
 
 if __name__ == "__main__":
     print morning_message_body()
