@@ -45,4 +45,7 @@ def _add_log_entry(event):
 
 if __name__ == "__main__":
     app.debug = SERVER_DEBUG_MODE
-    app.run(port=qc.param("LOG_SERVER_PORT"))
+    if app.debug:
+        app.run(port=qc.param("LOG_SERVER_PORT"))
+    else:
+        app.run(host="0.0.0.0", port=qc.param("LOG_SERVER_PORT"))
