@@ -22,6 +22,9 @@ def send_email(subject, body):
 
     status, msg = client.send(message)
 
+    if status == 200:
+        print "Message sent successfully."
     if status != 200:
+        print "Message delivery failed."
         print "status", status
         print "msg", msg
