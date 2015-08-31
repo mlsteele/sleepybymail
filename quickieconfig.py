@@ -2,6 +2,22 @@
 Quickly add configurable parameters to your application.
 
 Add `qconfig.json` to your `.gitignore`.
+That is where your secret parameters are stored.
+
+Usage Example:
+$ vim hello.py
+import quickieconfig as qc
+name = qc.param("name")
+print "Hi {}".format(qc.param("name"))
+
+$ python hello.py
+QuickieConfig is lacking a parameter.
+Enter a value for 'name'
+> Quagmire
+Hi Quagmire
+
+$ python hello.py
+Hi Quagmire
 """
 import json
 
@@ -15,7 +31,7 @@ def param(key):
         val = _ask_param(key)
         conf[key] = val
         with open(CONFIG_PATH, 'w') as f:
-            json.dump(conf, f)
+            json.dump(conf, f, indent=2, sort_keys=True)
         return val
 
 
