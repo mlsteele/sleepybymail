@@ -4,6 +4,10 @@ Quickly add configurable parameters to your application.
 Add `qconfig.json` to your `.gitignore`.
 That is where your secret parameters are stored.
 
+It's a good idea to declare all the qc params up front
+so that execution is not halted while your programming
+for a forgotten parameter.
+
 Usage Example:
 $ vim hello.py
 import quickieconfig as qc
