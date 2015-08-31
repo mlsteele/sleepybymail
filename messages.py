@@ -26,6 +26,8 @@ def morning_message_body():
     lines.append("")
     lines.append("How many hours of sleep did you get last night?")
     for n in xrange(4, 12):
+        lines.append("")
+        lines.append("")
         link_uuid = uuid.uuid4()
         link_href = make_link({
             "message_uuid": message_uuid,
