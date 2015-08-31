@@ -24,7 +24,7 @@ def morning_message_body():
     lines = []
     lines.append("Hello,")
     lines.append("")
-    lines.append("How many hours of sleep did you get last night?")
+    lines.append("How many hours did you sleep last night?")
     for n in xrange(4, 12):
         lines.append("")
         lines.append("")
@@ -49,7 +49,7 @@ def checkup_message_body():
     lines = []
     lines.append("Hey there,")
     lines.append("")
-    lines.append("Rate your awakeness on a scale from 1 to 5 please.")
+    lines.append("Rate your awakeness on a scale from 1 to 5, please.")
     lines.append("")
     for n in xrange(1, 6):
         lines.append("  ")
